@@ -1,0 +1,29 @@
+---
+# tasks file for remove-users
+
+
+- name: Remove a login user - SS_READ
+  user:
+   name: ss_read
+   password: '$6$KGLvPo6KUBONLJjE$Olahq6i94T6LmKc1iQfj0Jph9WOvJuGzKkLXKmUAaa1.X06A4U0awdHCSwa7bdQnQdckPr0kPYOXxviViXClx.'
+   groups:    # Empty by default.
+   state: absent
+   shell: /bin/bash       # Defaults to /bin/bash
+   system: no             # Defaults to no
+   remove: true
+  tags:
+    - del_users
+    - del_users_read    
+
+- name: Remove a login user - SS_POWER
+  user:
+   name: ss_power
+   password: '$6$KGLvPo6KUBONLJjE$Olahq6i94T6LmKc1iQfj0Jph9WOvJuGzKkLXKmUAaa1.X06A4U0awdHCSwa7bdQnQdckPr0kPYOXxviViXClx.'
+   groups:    # Empty by default.
+   state: absent
+   shell: /bin/bash       # Defaults to /bin/bash
+   system: no             # Defaults to no
+   remove: true
+  tags:
+    - del_users
+    - del_users_power  

@@ -1,0 +1,33 @@
+---
+# tasks file for adiciona-users
+
+- name: Create a login user - SS_READ
+  user:
+   name: ss_read
+   password: '$6$KGLvPo6KUBONLJjE$Olahq6i94T6LmKc1iQfj0Jph9WOvJuGzKkLXKmUAaa1.X06A4U0awdHCSwa7bdQnQdckPr0kPYOXxviViXClx.'
+   groups:   # Empty by default.
+   state: present
+   shell: /bin/bash       # Defaults to /bin/bash
+   system: no             # Defaults to no
+   createhome: yes        # Defaults to yes
+   home: /home/ss_read  # Defaults to /home/<username>
+  tags: 
+    - add_users
+    - add_users_read    
+
+- name: Create a login user - SS_POWER
+  user:
+   name: ss_power
+   password: '$6$KGLvPo6KUBONLJjE$Olahq6i94T6LmKc1iQfj0Jph9WOvJuGzKkLXKmUAaa1.X06A4U0awdHCSwa7bdQnQdckPr0kPYOXxviViXClx.'
+   groups: docker, sudo   # Empty by default.
+   state: present
+   shell: /bin/bash       # Defaults to /bin/bash
+   system: no             # Defaults to no
+   createhome: yes        # Defaults to yes
+   home: /home/ss_power  # Defaults to /home/<username>
+  tags: 
+    - add_users
+    - add_users_power
+
+
+

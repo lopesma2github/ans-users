@@ -1,0 +1,19 @@
+---
+all:
+  children:
+    hml:
+      hosts:
+        hml-all:
+          ansible_host: 192.168.1.91
+        prox:
+          ansible_host: 192.168.1.9
+    
+# homolog:
+#   children: 
+#     vm:
+#       hosts:
+#         prox: 192.168.1.9
+
+
+
+
